@@ -1,0 +1,45 @@
+
+
+<button class="button" value="searchBookForReservation" ng-click="searchBookForReservation()">Get List of Books You can Reserve</button>
+</br></br>
+<style>
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+}
+th {
+    text-align: left;
+}
+</style>
+
+<table>
+<thead>
+    <tr>
+        <th>Id</th>
+        <th>Title</th>
+        <th>ISBN</th>
+    </tr>
+    <thead>
+    <tbody>
+    
+    <tr ng-repeat="x in booksForReservation | orderBy: 'bookId'">
+        <td>{{x.bookId}}</td>
+        <td>{{x.title}}</td>
+        <td>{{x.ISBN}}</td>
+    </tr>
+    </tbody>
+    
+</table>
+</br> </br>
+<div ng-show="reserveSearchClicked">
+<label > Enter Id of the Book You want to Reserve</label>
+
+<input type="text" ng-model="reserveBookId"/>
+
+<button class="button" value="reserveBook" ng-click="reserveBook(reserveBookId)">Reserve</button>
+</div>
+</div>
+

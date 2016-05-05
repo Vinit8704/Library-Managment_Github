@@ -1,0 +1,38 @@
+
+
+<button class="button" value="statusOfReservedBooks" ng-click="statusOfReservedBooks()">Get Current status of the Books You Reserved</button>
+<style>
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+}
+th {
+    text-align: left;
+}
+</style>
+
+<table>
+<thead>
+    <tr>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Status</th>
+    </tr>
+    <thead>
+    <tbody>
+    
+    <tr ng-repeat="x in statusOfReservedBooks | orderBy: 'bookId'">
+        <td>{{x.bookId}}</td>
+        <td>{{x.title}}</td>
+        <td>{{x.status}}</td>
+    </tr>
+    </tbody>
+    
+</table>
+
+
+
+

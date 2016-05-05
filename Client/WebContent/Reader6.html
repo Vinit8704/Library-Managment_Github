@@ -1,0 +1,32 @@
+<div>
+Select Publisher:
+<select id="Publishers" name="Publishers" ng-model ="selectedPublisher">                                
+    <option ng-repeat="x in publishers" value={{x.publisherName}}>{{x.publisherName}} 
+    </option>
+</select>
+
+<button value="SearchByPublisher" ng-click="searchByPulisher(selectedPublisher)">Search</button>
+
+
+<table>
+<thead>
+    <tr>
+        <th>Id</th>
+        <th>Title</th>
+        <th>ISBN</th>
+    </tr>
+    <thead>
+    <tbody>
+    
+    <tr ng-repeat="x in booksByPublisher | orderBy: 'bookId'">
+        <td>{{x.bookId}}</td>
+        <td>{{x.title}}</td>
+        <td>{{x.ISBN}}</td>
+    </tr>
+    </tbody>
+    
+</table>
+
+
+</div>
+

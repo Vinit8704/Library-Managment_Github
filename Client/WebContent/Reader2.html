@@ -1,0 +1,49 @@
+<div>
+Select Branch:
+<select id="Branches" name="Branches" ng-model ="selectedBranch">                                
+    <option ng-repeat="x in branches" value={{x.libraryId}}>{{x.name}} 
+    </option>
+</select>
+
+<button  class="button" value="SearchCheckOutOptions" ng-click="searchCheckOutOptions(selectedBranch)">Search</button>
+</br></br>
+<style>
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+}
+th {
+    text-align: left;
+}
+</style>
+<table>
+<thead>
+    <tr>
+        <th>Id</th>
+        <th>Title</th>
+        <th>ISBN</th>
+    </tr>
+    <thead>
+    <tbody>
+    
+    <tr ng-repeat="x in checkOutBooks | orderBy: 'bookId'">
+        <td>{{x.bookId}}</td>
+        <td>{{x.title}}</td>
+        <td>{{x.ISBN}}</td>
+    </tr>
+    </tbody>
+    
+</table>
+
+<div ng-show="checkOutSearchClicked">
+<label > Enter Id of the Book You want to checkOut</label>
+
+<input type="text" ng-model="chcekOutBookId"/>
+
+<button class="button" value="checkOut" ng-click="checkOut(chcekOutBookId,selectedBranch)">CheckOut</button>
+</div>
+</div>
+

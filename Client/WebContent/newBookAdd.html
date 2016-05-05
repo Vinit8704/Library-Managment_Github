@@ -1,0 +1,30 @@
+<div>
+<label > ISBN: </label>
+<input type="text" ng-model="ISBN"/>
+
+<label > Title: </label>
+<input type="text" ng-model="Title"/>
+</div>
+</br> </br>
+<div>
+<label > Publisher: </label>
+<input type="text" ng-model="publisher"/>
+
+<label > Author; </label>
+<input type="text" ng-model="author"/>
+</div>
+</br> </br>
+<div>
+<label > Publication Date: enter in mmddyyy format </label>
+<input type="text" ng-model="publicationDate">
+
+Select Branch:
+<select id="Branches" name="Branches" ng-model ="selectedBranch">                                
+    <option ng-repeat="x in allBranches" value={{x.libraryId}}>{{x.name}} 
+    </option>
+</select>
+</div>
+</br></br>
+<div>
+<button value="Add" ng-click="addNewBook(ISBN, Title,publisher,author,publicationDate,selectedBranch)">Add</button>
+</div>

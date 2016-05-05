@@ -1,0 +1,39 @@
+<div>
+Select Branch:
+<select id="Branches" name="Branches" ng-model ="selectedBranch">                                
+    <option ng-repeat="x in allBranches" value={{x.name}}>{{x.name}} 
+    </option>
+</select>
+
+<button value="printTop10Borrowers" ng-click="printTop10Borrowers(selectedBranch)">Search</button>
+</br></br>
+<style>
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+}
+th {
+    text-align: left;
+}
+</style>
+<table>
+<thead>
+    <tr>
+        <th>ReaderId</th>
+        <th>Name</th>
+        <th>No Of Books Borrowed</th>
+    </tr>
+    <thead>
+    <tbody>
+    
+    <tr ng-repeat="x in top10Readers | orderBy: 'readerId'">
+        <td>{{x.readerId}}</td>
+        <td>{{x.name}}</td>
+        <td>{{x.count}}</td>
+    </tr>
+    </tbody>
+    
+</table>

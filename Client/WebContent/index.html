@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.center {
+    margin: auto;
+    width: 60%;
+    border: 3px solid #FFFFFF;
+    padding: 10px;
+}
+.login {
+    margin: auto;
+    border: 3px solid #FFFFFF;
+    padding: 10px;
+}
+.topRight {
+    position: absolute;
+    top: 0%;
+    right: 0%;
+}
+.button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+</style>
+<meta charset="ISO-8859-1">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+<script src="Login/loginController.js"></script>
+<title>Login Page</title>
+</head>
+<body bgcolor="#ADFF2F" class="center">
+<header class="center">
+    <h1>Welcome to Login Page </h1>
+    
+  </header>
+<div ng-app="loginApp" ng-controller="loginCtrl" class="center">
+
+<form>
+  <input type="radio" name="rdUser" ng-model="chkBx1" ng-click="change()"> Administrator<br>
+  <input type="radio" name="rdUser" ng-model="chkBx2" ng-click="change()"> Reader<br>
+</form>
+
+
+<div ng-show="admin">
+<label > Username </label>
+<input type="text" ng-model="userName"/>
+</div>
+
+<div ng-show="admin">
+<label > Password </label>
+<input type="text"ng-model="password"/>
+</div>
+
+<div ng-show="!admin">
+<label > Reader ID </label>
+<input type="text"ng-model="readerId"/>
+</div>
+
+<button class="button" value="Login" ng-click="login()">Login</button>
+</div>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.center {
+    margin: auto;
+    width: 60%;
+    border: 3px solid #FFFFFF;
+    padding: 10px;
+}
+.topRight {
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    height:200px;
+    width:200px;
+}
+</style>
+<meta charset="ISO-8859-1">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+<script src="Administrator/AdministratorController.js"></script>
+<script src="Login/loginController.js"></script>
+<title>Library Managment System</title>
+</head>
+<body ng-app="AdminApp" bgcolor="#ADFF2F">
+<header class="center">
+    <h1>Welcome to Administrator Page </h1>
+    
+  </header>
+<div  ng-controller="AdminCtrl" class="center">
+  
+    <label for="singleSelect"> Select Function: </label><br>
+    <select name="singleSelect" ng-model="selectedHTML">
+      <option value="Administrator1.html">Add a Book Copy</option>
+      <option value="Administrator2.html">Search a Book Copy</option>
+      <option value="Administrator3.html">Add new Reader</option>
+       <option value="Administrator4.html">Print Branch Information</option>
+      <option value="Administrator5.html">Print 10 most frequent Borrowers</option>
+      <option value="Administrator7.html">Print 10 Most Borrowed Books</option>
+      <option value="Administrator8.html">Find average fine</option>
+    </select>
+    <div class=topRight>
+    <button  value="Quit" ng-click="Quit()">Quit</button>
+    </div>
+    </br> </br>
+    <div ng-include="selectedHTML" onload='myFunction()' class="center"></div>
+    
+    
+</div>    
+
+</body>
+</html>

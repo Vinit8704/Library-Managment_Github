@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.center {
+    margin: auto;
+    width: 60%;
+    border: 3px solid #FFFFFF;
+    padding: 10px;
+}
+.topRight {
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    height:200px;
+    width:200px;
+}
+</style>
+<meta charset="ISO-8859-1">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+<script src="Administrator/AdministratorController.js"></script>
+<script src="Reader/ReaderController.js"></script>
+<script src="Login/loginController.js"></script>
+<title>Insert title here</title>
+</head>
+<body ng-app="ReaderApp" bgcolor="#ADFF2F">
+<header class="center">
+    <h1>Welcome to Reader Page </h1>
+    
+  </header>
+<div  ng-controller="ReaderCtrl" class=center>
+  
+    <label for="singleSelect"> Select Function: </label><br>
+    <select name="singleSelect" ng-model="selectedHTML">
+      <option value="Reader1.html">Search Book</option>
+      <option value="Reader2.html">Book CheckOut</option>
+      <option value="Reader3.html">Book Return</option>
+       <option value="Reader4.html">Book Reserve</option>
+      <option value="Reader5.html">Compute a fine</option>
+      <option value="Reader7.html">Print Reserved Books</option>
+      <option value="Reader8.html">Print Books By publisher</option>
+    </select>
+     <div class=topRight>
+    <button  class="Top" value="Quit" ng-click="Quit()">Quit</button>
+    </div>
+    </br> </br>
+    <div ng-include="selectedHTML" onload='myFunction()'></div>
+    
+    
+</div>    
+
+</body>
+</html>

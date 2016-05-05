@@ -1,0 +1,38 @@
+
+
+<button  class="button" value="ComputeFine" ng-click="computeFine()">Get Current Fine on the Books You Borrowed</button>
+</br></br>
+<style>
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+}
+th {
+    text-align: left;
+}
+</style>
+
+<table>
+<thead>
+    <tr>
+        <th>Id</th>
+        <th>Title</th>
+        <th>BorrowDate</th>
+        <th>Fine</th>
+    </tr>
+    <thead>
+    <tbody>
+    
+    <tr ng-repeat="x in computeFine | orderBy: 'bookId'">
+        <td>{{x.bookId}}</td>
+        <td>{{x.title}}</td>
+        <td>{{x.borrowDate}}</td>
+        <td>{{x.fine}}</td>
+    </tr>
+    </tbody>
+    
+</table>
+

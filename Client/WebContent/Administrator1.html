@@ -1,0 +1,12 @@
+<div>
+<label for="searchSelect"> Select Search Criteria: </label><br>
+    <select name="searchSelect" ng-model="selectedSearchHTML">
+      <option value="existingBookAdd.html">Add Existing Book Copy</option>
+      <option value="newBookAdd.html">Add New Copy</option>
+    </select>
+</br> </br>
+
+<div ng-include="selectedSearchHTML"></div>
+
+
+</div>

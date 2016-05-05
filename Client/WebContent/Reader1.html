@@ -1,0 +1,13 @@
+<div>
+<label for="searchSelect"> Select Search Criteria: </label><br>
+    <select name="searchSelect" ng-model="selectedSearchHTML">
+      <option value="searchById.html">Search Book by Id</option>
+      <option value="searchByTitle.html">Search Book by Title</option>
+      <option value="searchByPublisher.html">search Book By Publisher</option>
+    </select>
+</br> </br>
+
+<div ng-include="selectedSearchHTML"></div>
+
+
+</div>

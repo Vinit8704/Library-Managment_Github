@@ -1,0 +1,15 @@
+<div>
+Select Branch:
+<select id="Branches" name="Branches" ng-model ="selectedBranch">                                
+    <option ng-repeat="x in allBranches" value={{x.libraryId}}>{{x.name}} 
+    </option>
+</select>
+
+Select Book:
+<select id="BooksByTitle" name="BooksByTitle" ng-model ="selectedBook">                                
+    <option ng-repeat="x in booksByTitle" value={{x.ISBN}}>{{x.title}} 
+    </option>
+</select>
+
+<button value="addExistingBook" ng-click="addExistingBook(selectedBook, selectedBranch)">Add Copy</button>
+

@@ -1,0 +1,35 @@
+<div>
+<label > Title </label>
+<input type="text" ng-model="receivedtitle"/>
+
+<button value="searchByTitle" ng-click="searchByTitle(receivedtitle)">Search</button>
+<style>
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+}
+th {
+    text-align: left;
+}
+</style>
+
+<table>
+<thead>
+    <tr>
+        <th>Id</th>
+        <th>Title</th>
+        <th>ISBN</th>
+    </tr>
+    <thead>
+    <tbody>
+    <tr ng-repeat="x in book | orderBy: 'bookId'">
+        <td>{{x.bookId}}</td>
+        <td>{{x.title}}</td>
+        <td>{{x.ISBN}}</td>
+    </tr>
+    </tbody>
+</table>
+</div>

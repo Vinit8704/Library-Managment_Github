@@ -1,0 +1,39 @@
+Select Book:
+<select id="BooksByTitle" name="BooksByTitle" ng-model ="selectedBook">                                
+    <option ng-repeat="x in booksByTitle" value={{x.title}}>{{x.title}} 
+    </option>
+</select>
+
+<button value="searchBooksByTitle" ng-click="searchBooksByTitle(selectedBook)">Search</button>
+
+</br></br>
+<style>
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+}
+th {
+    text-align: left;
+}
+</style>
+<table>
+<thead>
+    <tr>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Status</th>
+    </tr>
+    <thead>
+    <tbody>
+    
+    <tr ng-repeat="x in selectedBooksWithStatus | orderBy: 'bookId'">
+        <td>{{x.bookId}}</td>
+        <td>{{x.title}}</td>
+        <td>{{x.status}}</td>
+    </tr>
+    </tbody>
+    
+</table>
